@@ -1,0 +1,37 @@
+{
+    "background": {
+        "scripts": ["context.js"]
+    },
+    "content_security_policy": "script-src 'self'; object-src 'self'",
+    "content_scripts": [{
+        "js": ["jquery.min.js"],
+        "matches": ["*://www.youtube.com/*"],
+        "run_at": "document_end"
+    }, {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content_script2.js"]
+    }],
+    "description": "Clips and saves sections of YouTube videos.",
+    "manifest_version": 2,
+    "name": "YouTube SoundBoard",
+    "icons": {
+        "48": "icon.png"
+    },
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "YouTube SoundBoard Clip"
+    },
+    "permissions": ["contextMenus",
+        "http://www.youtube.com/*",
+        "https://www.youtube.com/*",
+        "http://ghost.eecs.berkeley.edu/*",
+        "notifications",
+        "background",
+        "tabs"
+    ],
+    "version": "0.3",
+    "web_accessible_resources": ["inject.js", "inject2.js", "http://upload.wikimedia.org/wikipedia/commons/4/41/YouTube_icon_block.png"],
+    "externally_connectable": {
+        "matches": ["*://*.youtube.com/*"]
+    }
+}

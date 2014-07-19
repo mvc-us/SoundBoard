@@ -1,0 +1,1 @@
+var _recorded_times = [];
