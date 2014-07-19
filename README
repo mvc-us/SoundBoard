@@ -1,0 +1,6 @@
+YouTube Soundboard provides a way to easily save and share clips of YouTube videos.
+This repo contains the chrome extension corresponding to this feature.
+
+This extension will inject a script onto all youtube pages.
+It allows a simple click on the extension icon, or a right click to start/stop the clip.
+The video does not actually have to play: the extension will only record the time of the video.
